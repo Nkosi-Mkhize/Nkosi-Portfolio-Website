@@ -17,6 +17,7 @@ a{
     text-decoration: none;
 }
 
+
 .navbar{
     position: fixed;
     left: 0;
@@ -65,6 +66,17 @@ a{
     color:#7cf03d
 }
 
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10rem 9% 2rem;
+    background-color: var(--bg-color);
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+
 .home{
     display: flex;
     align-items: center;
@@ -77,6 +89,7 @@ a{
     animation: show-content 1.5s linear forwards;
     animation-delay: 1.6s;
 }
+
 
 .home-info h1{
     font-size: 55px;
@@ -261,26 +274,570 @@ a{
     }
 }
 
+/* Services Page */
+.services-section {
+    min-height: 100vh;
+    background-color: #1f242d;
+    padding: 100px 9% 60px;
+    color: white;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+    visibility: hidden;
+}
 
+.services-section .section-title {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-/* * 
+.services-section .section-title span {
+    color: #7cf03d;
+}
 
-.bars-animation{
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: #2a2f3b;
+    border-radius: 15px;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+    box-shadow: 0 0 10px rgba(124, 240, 61, 0.1);
+}
+
+.service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px rgba(124, 240, 61, 0.3);
+    border: 1px solid #7cf03d;
+}
+
+.service-box i {
+    font-size: 40px;
+    color: #7cf03d;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.service-box p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.service-box .icon {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: #7cf03d;
+    font-size: 20px;
+    transition: 0.3s;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    display: inline;
+}
+
+.service-box:hover .icon {
+    background: transparent;
+    color: #7cf03d;
+    border: 1px solid #7cf03d;
+}
+
+
+
+
+/*  Contact Form */
+.contact-section {
+    background-color: #1f242d;
+    padding: 100px 9% 60px;
+    color: white;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.contact-container {
     display: flex;
-    z-index: -1;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
 }
 
-bars-animation .bar{
-    width: 100%;
-    height: 100%;
+.contact-info {
+    flex: 1 1 45%;
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 26px;
+    color: #7cf03d;
+    margin-right: 15px;
+}
+
+.info-item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.info-item p {
+    margin: 2px 0 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Form Styling */
+.contact-form {
+    flex: 1 1 50%;
+    background: #2a2f3b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(124, 240, 61, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.contact-form h2 span {
+    color: #7cf03d;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
     background: #1f242d;
-    border: 2px solid red;
-    transform: translate(-100%);
-    animation: show-bars .5s ease-in-out forwards;
-    
+    border: 1px solid #333;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: none;
 }
-    */
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid #7cf03d;
+    outline: none;
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+/* Resume */
+.resume-section {
+  background-color: #1f242d;
+  min-height: 100vh;
+  padding: 100px 9% 60px;
+  color: white;
+  display: flex;
+  align-items: center;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.resume-container {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+
+.resume-tabs {
+  flex: 1;
+}
+
+.resume-tabs h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.resume-tabs p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.tab-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border: none;
+  background: #2a2f3b;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  border: 1px solid #7cf03d;
+  color: #7cf03d;
+  background: transparent;
+}
+
+.resume-content {
+  flex: 2;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: show-content 1.5s linear forwards;
+}
+
+.tab-content h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.tab-content h2 span {
+  color: #7cf03d;
+}
+
+.tab-content p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.experience-card {
+  background: #2a2f3b;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: 0.4s ease;
+}
+
+.experience-card:hover {
+  border: 1px solid #7cf03d;
+  box-shadow: 0 0 10px rgba(124, 240, 61, 0.2);
+}
+
+.experience-card h4 {
+  font-size: 14px;
+  color: #7cf03d;
+}
+
+.experience-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.experience-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Resume - Skills (tittles) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--card-bg, #fff);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #7cf03d; /
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+/* Resume - Skills section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.skill-card {
+  background: #2a2f3b;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  border: 1px solid #7cf03d;
+  box-shadow: 0 0 10px rgba(124, 240, 61, 0.3);
+}
+
+.skill-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Resume - About Me Section */
+.about-intro {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px 30px;
+}
+
+
+.about-item {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.about-item strong {
+  color: #7cf03d;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+
+/* Portfolio Page */
+.portfolio-section {
+  padding: 100px 9% 60px;
+  background: #1f242d;
+  color: white;
+  min-height: 100vh;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.section-title {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title span {
+  color: #7cf03d;
+}
+
+.portfolio-category {
+  margin-bottom: 70px;
+}
+
+.category-title {
+  font-size: 26px;
+  color: #7cf03d;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+  border: 2px solid #7cf03d;
+  box-shadow: 0 0 10px rgba(124, 240, 61, 0.3);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(124, 240, 61, 0.2);
+  border: none;
+  color: #7cf03d;
+  font-size: 28px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.carousel-btn:hover {
+  background: #7cf03d;
+  color: #1f242d;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+/* Updated Carausel CSS*/
+.carousel-item {
+  flex: 0 0 500px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(124, 240, 61, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-title {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ===========================
+   Responsive Media Queries
+   =========================== */
+
+@media (max-width: 1024px) {
+  .home,
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    background: #1f242d;
+    padding: 1rem;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-info h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-item {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-sci {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
